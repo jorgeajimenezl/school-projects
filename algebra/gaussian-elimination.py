@@ -40,10 +40,12 @@ def gaussian_elimination_stable(A, B):
             B[i] = A[k][k] * B[i] - A[i][k] * B[k]
 
             # normalize row
-            m = A[i][k + 1]
-            for j in range(k + 1, n):
+            m = A[i][k]
+            if m == 0:
+                continue
+            for j in range(k, n):
                 m = math.gcd(m, A[i][j])
-            for j in range(k + 1, n):
+            for j in range(k, n):
                 A[i][j] //= m        
 
     X = [0] * n
@@ -56,10 +58,13 @@ def gaussian_elimination_stable(A, B):
     return X
     
 def main():
-    sol = gaussian_elimination_stable([
-        [1, 1],
-        [2, 1]
-    ], [1, 3])
+    sol = gaussian_elimination_stable(
+        A = [
+            [1, 1],
+            [2, 1]
+        ], 
+        B = [1, 3]
+    )
 
     print('\n'.join([f"x{i} = {v}" for i, v in enumerate(sol)]))
 
