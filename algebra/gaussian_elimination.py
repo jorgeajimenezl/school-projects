@@ -2,8 +2,8 @@ import math
 
 def gaussian_elimination(A, B):
     n = len(A)
-    assert (len(A) == len(B))
-    assert (all([len(x) == n for x in A]))
+    assert len(A) == len(B)
+    assert all([len(x) == n for x in A])
     
     for k in range(n - 1):
         if abs(A[k][k]) < 1E-5:
