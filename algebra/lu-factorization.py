@@ -2,7 +2,7 @@ import math
 
 def lu_factorize(A):
     n = len(A)
-    assert (all([len(x) == n for x in A]))
+    assert all([len(x) == n for x in A])
 
     l = [[0] * n for _ in range(n)]
     u = [[0] * n for _ in range(n)]

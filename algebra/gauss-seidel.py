@@ -13,8 +13,8 @@ def error(A, gamma):
     
 def gauss_seidel(A, B):
     n = len(A)
-    assert (len(A) == len(B))
-    assert (all([len(x) == n for x in A]))
+    assert len(A) == len(B)
+    assert all([len(x) == n for x in A])
 
     X = [0] * n
     e = 1

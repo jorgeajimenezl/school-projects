@@ -6,8 +6,8 @@ def gauss_jordan_elimination(A, B):
     A = [[Fraction(c) for c in r] for r in A]
 
     n = len(A)
-    assert (len(A) == len(B))
-    assert (all([len(x) == n for x in A]))
+    assert len(A) == len(B)
+    assert all([len(x) == n for x in A])
     
     for k in range(n):
         if abs(A[k][k]) < 1E-5:

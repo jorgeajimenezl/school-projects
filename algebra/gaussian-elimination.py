@@ -28,8 +28,8 @@ def gaussian_elimination(A, B):
 # Only add errors when is computing solutions
 def gaussian_elimination_stable(A, B):
     n = len(A)
-    assert (len(A) == len(B))
-    assert (all([len(x) == n for x in A]))
+    assert len(A) == len(B)
+    assert all([len(x) == n for x in A])
     
     for k in range(n - 1):
         if A[k][k] == 0:

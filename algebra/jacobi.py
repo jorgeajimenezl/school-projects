@@ -16,8 +16,8 @@ def error(A, X, S):
     
 def jacobi(A, B):
     n = len(A)
-    assert (len(A) == len(B))
-    assert (all([len(x) == n for x in A]))
+    assert len(A) == len(B)
+    assert all([len(x) == n for x in A])
 
     X = [0] * n
     e = 1
